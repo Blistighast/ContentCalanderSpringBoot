@@ -18,7 +18,9 @@
 		<license/>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<name>Brian Guterl</name>
+		</developer>
 	</developers>
 	<scm>
 		<connection/>
@@ -29,6 +31,7 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
