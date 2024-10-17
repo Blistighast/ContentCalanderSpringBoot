@@ -14,18 +14,22 @@ import java.util.Optional;
 @Repository
 public class ContentCollectionRepository {
 
-    private final List<Content> content = new ArrayList<>();
+    private final List<Content> contentList = new ArrayList<>();
 
     public ContentCollectionRepository() {
     }
 
     public List<Content> findAll() {
-        return content;
+        return contentList;
     }
 
     //lets you deal with nulls easily, item may or may not exist
     public Optional<Content> findById(Integer id) {
-        return content.stream().filter(c -> c.id().equals(id)).findFirst();
+        return contentList.stream().filter(c -> c.id().equals(id)).findFirst();
+    }
+
+    public void save(Content content) {
+        contentList.add(content);
     }
 
     @PostConstruct
@@ -49,7 +53,7 @@ public class ContentCollectionRepository {
         null,
         "");
 
-        content.add(c);
-        content.add(b);
+        contentList.add(c);
+        contentList.add(b);
     }
 }
