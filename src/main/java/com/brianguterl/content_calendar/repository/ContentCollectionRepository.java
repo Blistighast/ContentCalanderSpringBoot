@@ -28,8 +28,17 @@ public class ContentCollectionRepository {
         return contentList.stream().filter(c -> c.id().equals(id)).findFirst();
     }
 
+    public boolean existsById(Integer id) {
+        return contentList.stream().anyMatch(c -> c.id().equals(id));
+    }
+
     public void save(Content content) {
+        contentList.removeIf(c -> c.id().equals(content.id()));
         contentList.add(content);
+    }
+
+    public void delete(Integer id) {
+        contentList.removeIf(c -> c.id().equals(id));
     }
 
     @PostConstruct
