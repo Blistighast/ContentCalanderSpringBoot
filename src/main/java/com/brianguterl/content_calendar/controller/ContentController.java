@@ -3,6 +3,7 @@ package com.brianguterl.content_calendar.controller;
 import com.brianguterl.content_calendar.model.Content;
 import com.brianguterl.content_calendar.repository.ContentCollectionRepository;
 import com.brianguterl.content_calendar.repository.ContentJdbcTemplateRepository;
+import com.brianguterl.content_calendar.repository.ContentRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,14 +17,16 @@ import java.util.List;
 @CrossOrigin("http://localhost:5173/")
 public class ContentController {
 
-    private final ContentCollectionRepository repository;
+    private final ContentRepository repository;
+
+//    private final ContentCollectionRepository repository;
 
 //    private final ContentJdbcTemplateRepository repository;
 
     //autowired marks to be autowired by Springs dependency injector
     //is implicit if there is only 1 autowiring, like here, just to demonstrate
     @Autowired
-    public ContentController(ContentCollectionRepository repository) {
+    public ContentController(ContentRepository repository) {
         this.repository = repository;
     }
 
@@ -59,6 +62,6 @@ public class ContentController {
         if (!repository.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Content not found");
         }
-        repository.delete(id);
+        repository.deleteById(id);
     }
 }
