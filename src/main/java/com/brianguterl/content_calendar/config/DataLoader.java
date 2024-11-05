@@ -12,11 +12,4 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("hello, from commandLineRunner");
     }
-
-    @Bean
-    CommandLineRunner commandLineRunner() {
-        return args -> {
-            //can insert data into database
-        };
-    }
 }
