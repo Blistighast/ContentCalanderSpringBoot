@@ -1,6 +1,7 @@
 package com.brianguterl.content_calendar.controller;
 
 import com.brianguterl.content_calendar.model.Content;
+import com.brianguterl.content_calendar.model.Status;
 import com.brianguterl.content_calendar.repository.ContentCollectionRepository;
 import com.brianguterl.content_calendar.repository.ContentJdbcTemplateRepository;
 import com.brianguterl.content_calendar.repository.ContentRepository;
@@ -63,5 +64,15 @@ public class ContentController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Content not found");
         }
         repository.deleteById(id);
+    }
+
+    @GetMapping("/filter/{keyword}")
+    public List<Content> findByTitle(@PathVariable String keyword) {
+        return repository.findAllByTitleContains(keyword);
+    }
+
+    @GetMapping("/filter/status/{status}")
+    public List<Content> findByStatus(@PathVariable Status status) {
+        return repository.listByStatus(status);
     }
 }
