@@ -1,5 +1,6 @@
 package com.brianguterl.content_calendar;
 
+import com.brianguterl.content_calendar.config.ContentCalendarProperties;
 import com.brianguterl.content_calendar.model.Content;
 import com.brianguterl.content_calendar.model.Status;
 import com.brianguterl.content_calendar.model.Type;
@@ -7,6 +8,7 @@ import com.brianguterl.content_calendar.repository.ContentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
@@ -14,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
+@EnableConfigurationProperties(ContentCalendarProperties.class)
 @SpringBootApplication
 public class Application {
 
