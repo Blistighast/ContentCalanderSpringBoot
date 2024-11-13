@@ -1,0 +1,31 @@
+[
+  {
+    "id": null,
+    "title": "My first article",
+    "desc": "This is my first description",
+    "status": "PUBLISHED",
+    "contentType": "VIDEO",
+    "dateCreated": "2023-02-01T00:00:00.000000",
+    "dateUpdated": null,
+    "url": "https://brianguterl.com/"
+  },
+  {
+    "id": null,
+    "title": "My second article",
+    "desc": "This is my second description",
+    "status": "PUBLISHED",
+    "contentType": "VIDEO",
+    "dateCreated": "2023-02-01T00:00:00.000000",
+    "dateUpdated": null,
+    "url": "https://brianguterl.com/"
+  },{
+    "id": null,
+    "title": "My third article",
+    "desc": "This is my third description",
+    "status": "PUBLISHED",
+    "contentType": "VIDEO",
+    "dateCreated": "2023-02-01T00:00:00.000000",
+    "dateUpdated": null,
+    "url": "https://brianguterl.com/"
+  }
+]

@@ -1,0 +1,6 @@
+#same as application-properties, has less typing redundancy, if both are used, they get merged
+
+spring:
+  datasource:
+    username: brian
+    password: password
